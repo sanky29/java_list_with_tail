@@ -56,14 +56,23 @@ public class list_with_tail<Type> implements list_with_tail_interface<Type> {
     				  //just keep tail to head
     				  head = new_node;
     				  
-    				  //similarly change head
-    				  tail = new_node;
-    				  
     				  //and keep tail as next of head
     				  head.change_next(tail);
     						  
     			  }
-    			  
+    			  //if len = 1 then need to update the tail
+    			  if (len== 1) {
+    				  
+    				  //just update the tail
+    				  tail.change_element(head.show_element());
+    				  
+    				  //just need to change next node to head
+    	    			 new_node.change_next(tail);
+    	    			 
+    	    			 //now change head to new_node
+    	    			 head = new_node;
+    				  
+    			  }
     			  //else
     			  else {
     			  
@@ -100,9 +109,9 @@ public class list_with_tail<Type> implements list_with_tail_interface<Type> {
     			pre_node.change_next(new_node);
     			
     			//let if last element is to add we also need to update the tai
-    			if (pos == len -1 ) {
+    			if (pos == len  ) {
     				
-    				//just change the tail
+    				//now just change tail
     				tail = new_node;
     			}
     		  }
@@ -225,10 +234,11 @@ public class list_with_tail<Type> implements list_with_tail_interface<Type> {
     	Integer a = new Integer(3);
     	Integer b = new Integer(2);
     	list.add_node(0,c);
-    
-    	list.add_node(0,a);
+    	 System.out.println("now the last element " + list.show_tail());
+    	list.add_node(1,a);
+    	 System.out.println("now the last element " + list.show_tail());
     	list.add_node(0, b);
-     
+    	 
     	list.print_list();
     	   System.out.println("now the last element " + list.show_tail());
     	list.delete_ith_element(2);
