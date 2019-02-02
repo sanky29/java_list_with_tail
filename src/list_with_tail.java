@@ -64,6 +64,16 @@ public class list_with_tail<Type> implements list_with_tail_interface<Type> {
     				  head.change_next(tail);
     						  
     			  }
+    			  //if len is one we have some different case 
+    			  if (len == 1) {
+    				  
+    				  //just change next_of new node to tail
+    				  new_node.change_next(tail);
+    				  
+    				  //and make head as new_node
+    				  head = new_node;
+    				  
+    			  }
     			  //else
     			  else {
     			  
