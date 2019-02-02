@@ -18,4 +18,7 @@ public interface list_with_tail_interface<Type> {
     
     //print the list
     public void print_list();
+	
+	//add function to show tail element
+	public void show_tail();
     }
